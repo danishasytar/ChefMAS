@@ -1,10 +1,15 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { RequestformPage } from '../pages/requestform/requestform';
+import { HotfoodPage } from '../pages/hotfood/hotfood';
+import { AdditionalorderPage } from '../pages/additionalorder/additionalorder';
+import { InventoryPage } from '../pages/inventory/inventory';
+
 
 import { OneSignal } from '@ionic-native/onesignal';
 
@@ -19,13 +24,17 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public oneSignal:OneSignal, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public alertCtrl: AlertController, public oneSignal:OneSignal, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Lounge', component: HomePage },
-      { title: 'Passenger Order', component: ListPage }
+      { title: 'Passenger Order', component: ListPage },
+      { title: 'Request Form', component: RequestformPage },
+      { title: 'Inventory', component: InventoryPage }
+      
+
     ];
 
   }
@@ -72,7 +81,27 @@ export class MyApp {
 
         this.oneSignal.handleNotificationReceived().subscribe(() => {
           // do something when a notification is opened
-          console.log("HAHAHAAHA")
+          let alert = this.alertCtrl.create({
+            title: 'New Order',
+            message: 'New Order Received',
+            buttons: [
+              {
+                text: 'Dismiss',
+                role: 'cancel',
+                handler: () => {
+                  console.log('Cancel clicked');
+                }
+              },
+              {
+                text: 'View Order',
+                handler: () => {
+                this.nav.setRoot(ListPage);
+                  
+                }
+              }
+            ]
+          });
+          alert.present();
         });
 
 

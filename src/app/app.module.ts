@@ -5,6 +5,10 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { RequestformPage } from '../pages/requestform/requestform';
+import { HotfoodPage } from '../pages/hotfood/hotfood';
+import { AdditionalorderPage } from '../pages/additionalorder/additionalorder';
+import { InventoryPage } from '../pages/inventory/inventory';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,7 +25,12 @@ import { OneSignal } from '@ionic-native/onesignal';
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    RequestformPage,
+    HotfoodPage,
+    AdditionalorderPage,
+    InventoryPage
+
   ],
   imports: [
     BrowserModule,
@@ -32,7 +41,12 @@ import { OneSignal } from '@ionic-native/onesignal';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    RequestformPage,
+    HotfoodPage,
+    AdditionalorderPage,
+    InventoryPage
+
   ],
   providers: [
     StatusBar,

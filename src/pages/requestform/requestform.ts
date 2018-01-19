@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HotfoodPage } from '../hotfood/hotfood';
+import { AdditionalorderPage } from '../additionalorder/additionalorder';
 
 /**
  * Generated class for the RequestformPage page.
@@ -20,6 +22,18 @@ export class RequestformPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RequestformPage');
+  }
+
+
+  hotFood(){
+  	console.log("hotfood")
+  	this.navCtrl.push(HotfoodPage);
+  }
+
+  addOrder(){
+  	console.log("addorder")
+  	this.navCtrl.push(AdditionalorderPage);
+
   }
 
 }

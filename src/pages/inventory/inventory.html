@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Inventory</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+	<ion-item>
+		Potato Hasbrown
+		<br>
+		<strong *ngIf="hashbrown.count > 0">additional {{hashbrown.count}}</strong>
+		<span item-end ><h1><strong>3</strong></h1></span>
+		<button ion-button small item-end color="danger" on-click="remove(hashbrown)"><strong>-</strong></button>
+		<button ion-button small item-end color="secondary" on-click="add(hashbrown)"><strong>+</strong></button>
+	</ion-item>
+	<ion-item>
+		Mini Pau
+		<br>
+		<strong *ngIf="minipau.count > 0">additional {{minipau.count}}</strong>
+		<span item-end ><h1><strong>3</strong></h1></span>
+		<button ion-button small item-end color="danger" on-click="remove(minipau)"><strong>-</strong></button>
+		<button ion-button small item-end color="secondary" on-click="add(minipau)"><strong>+</strong></button>
+	</ion-item>
+	<ion-item>
+		Dim Sum
+		<br>
+		<strong *ngIf="dimsum.count > 0">additional {{dimsum.count}}</strong>
+		<span item-end ><h1><strong>3</strong></h1></span>
+		<button ion-button small item-end color="danger" on-click="remove(dimsum)"><strong>-</strong></button>
+		<button ion-button small item-end color="secondary" on-click="add(dimsum)"><strong>+</strong></button>
+	</ion-item>
+	<ion-item>
+		Watermelon
+		<br>
+		<strong *ngIf="watermelon.count > 0">additional {{watermelon.count}}</strong>
+		<span item-end ><h1><strong>3</strong></h1></span>
+		<button ion-button small item-end color="danger" on-click="remove(watermelon)"><strong>-</strong></button>
+		<button ion-button small item-end color="secondary" on-click="add(watermelon)"><strong>+</strong></button>
+	</ion-item>
+	<ion-item>
+		Honey Dew
+		<br>
+		<strong *ngIf="honeydew.count > 0">additional {{honeydew.count}}</strong>
+		<span item-end ><h1><strong>3</strong></h1></span>
+		<button ion-button small item-end color="danger" on-click="remove(honeydew)"><strong>-</strong></button>
+		<button ion-button small item-end color="secondary" on-click="add(honeydew)"><strong>+</strong></button>
+	</ion-item>
+
+</ion-content>
